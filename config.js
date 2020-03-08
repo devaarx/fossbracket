@@ -1,28 +1,42 @@
 module.exports = {
-  url: '#',
+  url: 'https://fossbracket.com',
   pathPrefix: '/',
-  title: 'fossbracket',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
-  copyright: '© All rights reserved.',
-  postsPerPage: 4,
+  title: 'Fossbracket',
+  subtitle: '',
+  copyright: '© 2020 All rights reserved.',
+  postsPerPage: 6,
   menu: [
     {
-      label: 'Articles',
-      path: '/',
+      label: 'React',
+      path: '/category/react',
     },
     {
-      label: 'About',
-      path: '/pages/about',
+      label: 'JavaScript',
+      path: '/category/javascript',
     },
     {
-      label: 'Contact',
-      path: '/pages/contacts',
+      label: 'CSS',
+      path: '/category/css',
+    },
+    {
+      label: 'Linux',
+      path: '/category/linux',
+    },
+  ],
+  socialLinks: [
+    {
+      label: 'Twitter',
+      link: '#',
+    },
+    {
+      label: 'Facebook',
+      link: '#',
     },
   ],
   author: {
     name: 'iamdebadipti',
     photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    bio: 'A JavaScript Developer',
     contacts: {
       telegram: '#',
       twitter: '#',
