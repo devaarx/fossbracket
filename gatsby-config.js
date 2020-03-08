@@ -9,6 +9,7 @@ module.exports = {
     copyright: siteConfig.copyright,
     menu: siteConfig.menu,
     author: siteConfig.author,
+    socialLinks: siteConfig.socialLinks,
   },
   plugins: [
     {
@@ -76,5 +77,11 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-optimize-svgs',
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
   ],
 };
