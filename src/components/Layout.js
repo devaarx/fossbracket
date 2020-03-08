@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { withPrefix } from 'gatsby';
 import { useSiteMetadata } from '../hooks';
+import Navigation from './Navigation';
 
 const Layout = ({ children, title, description, socialImage }) => {
   const { author, url } = useSiteMetadata();
@@ -21,6 +22,7 @@ const Layout = ({ children, title, description, socialImage }) => {
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={metaImageUrl} />
       </Helmet>
+      <Navigation />
       {children}
     </div>
   );
