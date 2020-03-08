@@ -23,6 +23,10 @@ const useSiteMetadata = () => {
               label
               path
             }
+            socialLinks {
+              label
+              link
+            }
             url
             title
             subtitle
