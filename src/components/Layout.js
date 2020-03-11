@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { withPrefix } from 'gatsby';
 import { useSiteMetadata } from '../hooks';
 import Navigation from './Navigation';
+import { LayoutWrapper } from './Styled/Layout';
 
 const Layout = ({ children, title, description, socialImage }) => {
   const { author, url } = useSiteMetadata();
@@ -10,7 +11,7 @@ const Layout = ({ children, title, description, socialImage }) => {
   const metaImageUrl = url + withPrefix(metaImage);
 
   return (
-    <div>
+    <LayoutWrapper>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -24,7 +25,7 @@ const Layout = ({ children, title, description, socialImage }) => {
       </Helmet>
       <Navigation />
       {children}
-    </div>
+    </LayoutWrapper>
   );
 };
 
