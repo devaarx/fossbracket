@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavlinksStyled, LinkStyled } from '../Styled/Navigation';
+import { Link } from 'gatsby';
+import { NavlinksStyled } from '../Styled/Navigation';
 
 const Navlinks = ({ menu }) => {
   return (
@@ -7,7 +8,7 @@ const Navlinks = ({ menu }) => {
       {menu.map((item, index) => {
         return (
           <li key={index}>
-            <LinkStyled to={item.path}>{item.label}</LinkStyled>
+            <Link to={item.path}>{item.label}</Link>
           </li>
         );
       })}

@@ -4,18 +4,22 @@ import { PAGINATION } from '../constants';
 
 const Pagination = ({ prevPagePath, nextPagePath, hasNextPage, hasPrevPage }) => {
   return (
-    <div>
-      <div>
-        <Link rel="prev" to={hasPrevPage ? prevPagePath : '/'}>
-          {PAGINATION.PREV_PAGE}
-        </Link>
-      </div>
-      <div>
-        <Link rel="next" to={hasNextPage ? nextPagePath : '/'}>
-          {PAGINATION.NEXT_PAGE}
-        </Link>
-      </div>
-    </div>
+    <>
+      {hasPrevPage && (
+        <div>
+          <Link rel="prev" to={hasPrevPage ? prevPagePath : '/'}>
+            {PAGINATION.PREV_PAGE}
+          </Link>
+        </div>
+      )}
+      {hasNextPage && (
+        <div>
+          <Link rel="next" to={hasNextPage ? nextPagePath : '/'}>
+            {PAGINATION.NEXT_PAGE}
+          </Link>
+        </div>
+      )}
+    </>
   );
 };
 

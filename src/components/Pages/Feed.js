@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { Link } from 'gatsby';
+import Tags from '../Post/Tags';
 
 const Feed = ({ edges }) => (
   <div>
@@ -19,6 +20,9 @@ const Feed = ({ edges }) => (
         </h2>
         <p>{edge.node.frontmatter.description}</p>
         <Link to={edge.node.fields.slug}>Read</Link>
+        {edge.node.frontmatter.tags && edge.node.fields.tagSlugs && (
+          <Tags tags={edge.node.frontmatter.tags} tagSlugs={edge.node.fields.tagSlugs} />
+        )}
       </div>
     ))}
   </div>

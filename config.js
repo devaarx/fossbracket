@@ -12,7 +12,7 @@ module.exports = {
     },
     {
       label: 'JavaScript',
-      path: '/category/javascript',
+      path: '/category/java-script',
     },
     {
       label: 'CSS',

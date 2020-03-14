@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
 export const NavigationStyled = styled.div`
   display: flex;
@@ -17,10 +16,9 @@ export const NavlinksStyled = styled.ul`
   padding: 0;
   list-style: none;
   > li {
-    margin: 0;
+    margin: 0 1rem 0 0;
+    > a {
+      padding: 0.1rem 0.5rem;
+    }
   }
-`;
-
-export const LinkStyled = styled(Link)`
-  color: #333;
 `;

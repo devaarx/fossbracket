@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 const Tags = ({ tags, tagSlugs }) => (
-  <ul>
+  <div>
     {tagSlugs &&
       tagSlugs.map((slug, i) => (
-        <li key={tags[i]}>
-          <Link to={slug}>{tags[i]}</Link>
-        </li>
+        <Link key={tags[i]} to={slug}>
+          {tags[i]}
+        </Link>
       ))}
-  </ul>
+  </div>
 );
 
 export default Tags;
