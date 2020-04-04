@@ -10,6 +10,18 @@ const typography = new Typography({
   headerWeight: 700,
   bodyWeight: 300,
   boldWeight: 700,
+  overrideStyles: () => ({
+    a: {
+      fontFamily: [
+        'Open Sans',
+        'Helvetica Neue',
+        'Segoe UI',
+        'Helvetica',
+        'Arial',
+        'sans-serif',
+      ].join(','),
+    },
+  }),
 });
 
 export default typography;
