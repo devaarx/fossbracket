@@ -1,17 +1,38 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import useDarkMode from 'use-dark-mode';
 import { useSiteMetadata } from '../../hooks';
-import Logo from './Logo';
-import { NavigationStyled } from '../Styled/Navigation';
-import Navlinks from './Navlinks';
 
 const Navigation = () => {
-  const { menu, url, title } = useSiteMetadata();
+  const { menu, title } = useSiteMetadata();
+  const darkMode = useDarkMode(true);
 
   return (
-    <NavigationStyled>
-      <Logo url={url} title={title} />
-      <Navlinks menu={menu} />
-    </NavigationStyled>
+    <div className="nav">
+      <div className="nav_logo">
+        <Link to="/" title={title} className={darkMode.value ? 'dark' : ''}>
+          foss<span>bracket</span>
+        </Link>
+      </div>
+      <div className="nav_link">
+        {menu.map((item, index) => {
+          return (
+            <li key={index}>
+              <Link
+                to={item.path}
+                activeClassName="active"
+                className={darkMode.value ? 'dark' : ''}
+              >
+                {item.label}
+              </Link>
+            </li>
+          );
+        })}
+      </div>
+      <div className="nav_toggle">
+        <button onClick={() => darkMode.toggle()}>☀ / ☾</button>
+      </div>
+    </div>
   );
 };
 
