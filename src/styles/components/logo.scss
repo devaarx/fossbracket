@@ -1,0 +1,45 @@
+.nav {
+  &_logo {
+    display: flex;
+    align-items: center;
+    > a {
+      margin-right: 2.6rem;
+      font-weight: normal;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: var(--font-block);
+      color: var(--text-dark);
+      &.dark {
+        color: var(--text-light);
+      }
+      > span {
+        padding: 0 0.77rem;
+        margin-left: 0.4rem;
+        position: relative;
+        font-size: var(--font-normal);
+        text-transform: lowercase;
+        font-weight: 500;
+        &::after,
+        &::before {
+          font-size: var(--font-block);
+          position: absolute;
+          color: var(--accent-color);
+          top: 50%;
+          transform: translateY(-58%);
+          line-height: 1;
+        }
+        &::after {
+          content: '}';
+          right: 0;
+        }
+        &::before {
+          content: '{';
+          left: 0;
+        }
+      }
+    }
+  }
+}
