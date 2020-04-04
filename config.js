@@ -7,20 +7,24 @@ module.exports = {
   postsPerPage: 6,
   menu: [
     {
+      label: 'All Articles',
+      path: '/',
+    },
+    {
       label: 'React',
-      path: '/category/react',
+      path: '/category/react/',
     },
     {
       label: 'JavaScript',
-      path: '/category/java-script',
+      path: '/category/java-script/',
     },
     {
       label: 'CSS',
-      path: '/category/css',
+      path: '/category/css/',
     },
     {
       label: 'Linux',
-      path: '/category/linux',
+      path: '/category/linux/',
     },
   ],
   socialLinks: [
