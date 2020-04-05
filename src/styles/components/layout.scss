@@ -8,7 +8,17 @@
     @extend .layout_width;
   }
   &_nav {
-    border-top: 0.5rem solid var(--accent-color);
+    position: relative;
+    &::after {
+      z-index: 2;
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0.5rem;
+      background-color: var(--accent-color);
+    }
   }
 }
 
