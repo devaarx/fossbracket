@@ -10,8 +10,8 @@ const Post = ({ post }) => {
 
   return (
     <div className="article">
-      <Content body={html} title={title} />
       <Meta date={date} />
+      <Content body={html} title={title} />
       {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs} />}
     </div>
   );

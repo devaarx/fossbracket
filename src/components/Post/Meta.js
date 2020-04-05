@@ -3,7 +3,7 @@ import moment from 'moment';
 
 const Meta = ({ date }) => (
   <div className="article_meta">
-    <p>Published {moment(date).format('D MMM YYYY')}</p>
+    <span>Published on {moment(date).format('D MMM YYYY')}</span>
   </div>
 );
 

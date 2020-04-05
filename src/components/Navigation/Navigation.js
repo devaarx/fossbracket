@@ -10,7 +10,7 @@ const Navigation = () => {
   return (
     <div className="nav">
       <div className="nav_logo">
-        <Link to="/" title={title} className={darkMode.value ? 'dark' : ''}>
+        <Link to="/" title={title}>
           foss<span>bracket</span>
         </Link>
       </div>
@@ -18,21 +18,14 @@ const Navigation = () => {
         {menu.map((item, index) => {
           return (
             <li key={index}>
-              <Link
-                to={item.path}
-                activeClassName="active"
-                className={darkMode.value ? 'dark' : ''}
-              >
+              <Link to={item.path} activeClassName="active">
                 {item.label}
               </Link>
             </li>
           );
         })}
       </div>
-      <div
-        className={`nav_toggle ${darkMode.value ? 'dark' : ''}`}
-        onClick={() => darkMode.toggle()}
-      />
+      <div className="nav_toggle" onClick={() => darkMode.toggle()} />
     </div>
   );
 };
