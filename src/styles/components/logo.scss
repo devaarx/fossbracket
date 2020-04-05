@@ -19,11 +19,12 @@
         padding: 0 0.77rem;
         margin-left: 0.4rem;
         position: relative;
-        font-size: var(--font-normal);
+        font-size: var(--font-label);
         text-transform: lowercase;
-        font-weight: 500;
+        font-weight: 300;
         &::after,
         &::before {
+          font-weight: 500;
           font-size: var(--font-block);
           position: absolute;
           color: var(--accent-color);

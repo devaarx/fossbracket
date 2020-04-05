@@ -29,9 +29,10 @@ const Navigation = () => {
           );
         })}
       </div>
-      <div className="nav_toggle">
-        <button onClick={() => darkMode.toggle()}>☀ / ☾</button>
-      </div>
+      <div
+        className={`nav_toggle ${darkMode.value ? 'dark' : ''}`}
+        onClick={() => darkMode.toggle()}
+      />
     </div>
   );
 };
