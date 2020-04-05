@@ -1,0 +1,43 @@
+.article {
+  margin: 3rem 0;
+  &_content {
+    margin-bottom: 3rem;
+    &_title {
+      font-size: var(--font-article-heading);
+      margin: 0 0 3rem;
+    }
+    &_body {
+      margin-right: 8rem;
+      > ul:first-child {
+        > li {
+          padding-left: 0.6rem;
+          transition: 0.2s color ease;
+          &:hover {
+            color: var(--accent-color);
+          }
+          > a {
+            display: block;
+            font-family: inherit;
+            font-size: var(--font-normal);
+            color: inherit;
+          }
+        }
+      }
+      > h2,
+      h3 {
+        padding: 1rem 0;
+        margin-bottom: 0;
+        .anchor {
+          &.before {
+            top: 50%;
+            left: -1.5rem;
+            transform: translateY(-50%);
+          }
+        }
+      }
+      > p {
+        font-size: var(--font-normal);
+      }
+    }
+  }
+}
