@@ -2,8 +2,8 @@ import React from 'react';
 import moment from 'moment';
 
 const Meta = ({ date }) => (
-  <div>
-    <p>Published {moment(date).format('D MMM YYYY')}</p>
+  <div className="article_meta">
+    <span>Published on {moment(date).format('D MMM YYYY')}</span>
   </div>
 );
 

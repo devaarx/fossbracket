@@ -16,13 +16,20 @@
         color: var(--text-secondary);
         font-weight: 400;
         transition: 0.2s color ease;
-        &.dark {
-          color: var(--text-secondary-dark);
-        }
         &.active,
         &:hover {
-          color: var(--accent-color);
+          color: var(--accent-color) !important;
         }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  .nav {
+    &_link {
+      > li > a {
+        color: var(--text-secondary-dark);
       }
     }
   }

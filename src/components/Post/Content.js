@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Content = ({ body, title }) => (
-  <div>
-    <h1>{title}</h1>
-    <div dangerouslySetInnerHTML={{ __html: body }} />
+  <div className="article_content">
+    <h1 className="article_content_title">{title}</h1>
+    <div className="article_content_body" dangerouslySetInnerHTML={{ __html: body }} />
   </div>
 );
 

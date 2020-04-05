@@ -12,9 +12,6 @@
       font-weight: 800;
       font-size: var(--font-block);
       color: var(--text-dark);
-      &.dark {
-        color: var(--text-light);
-      }
       > span {
         padding: 0 0.77rem;
         margin-left: 0.4rem;
@@ -41,6 +38,14 @@
           left: 0;
         }
       }
+    }
+  }
+}
+
+.dark-mode {
+  .nav_logo {
+    > a {
+      color: var(--text-light);
     }
   }
 }
