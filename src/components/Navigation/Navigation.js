@@ -8,7 +8,7 @@ const Navigation = () => {
   const darkMode = useDarkMode(true);
 
   return (
-    <div className="nav">
+    <nav className="nav">
       <div className="nav_logo">
         <Link to="/" title={title}>
           foss<span>bracket</span>
@@ -17,16 +17,14 @@ const Navigation = () => {
       <div className="nav_link">
         {menu.map((item, index) => {
           return (
-            <li key={index}>
-              <Link to={item.path} activeClassName="active">
-                {item.label}
-              </Link>
-            </li>
+            <Link to={item.path} activeClassName="active" key={index}>
+              {item.label}
+            </Link>
           );
         })}
       </div>
       <div className="nav_toggle" onClick={() => darkMode.toggle()} />
-    </div>
+    </nav>
   );
 };
 

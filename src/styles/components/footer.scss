@@ -1,0 +1,34 @@
+.footer {
+  display: flex;
+  color: var(--text-secondary);
+  &_copy {
+    margin-right: 3rem;
+  }
+  &_nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    > li {
+      margin: 0;
+      &:not(:first-child) {
+        margin-left: 1.8rem;
+      }
+      > a {
+        color: inherit;
+        transition: 0.2s ease;
+        will-change: color;
+        &:hover,
+        &:active {
+          color: var(--accent-color);
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  .footer {
+    color: var(--text-secondary-dark);
+  }
+}

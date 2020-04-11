@@ -1,6 +1,5 @@
 import React from 'react';
 import Content from './Content';
-import Meta from './Meta';
 import Tags from './Tags';
 
 const Post = ({ post }) => {
@@ -10,8 +9,7 @@ const Post = ({ post }) => {
 
   return (
     <div className="article">
-      <Meta date={date} />
-      <Content body={html} title={title} />
+      <Content body={html} title={title} date={date} />
       {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs} />}
     </div>
   );

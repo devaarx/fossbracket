@@ -1,9 +1,13 @@
 import React from 'react';
+import Meta from './Meta';
 
-const Content = ({ body, title }) => (
+const Content = ({ body, title, date }) => (
   <div className="article_content">
-    <h1 className="article_content_title">{title}</h1>
-    <div className="article_content_body" dangerouslySetInnerHTML={{ __html: body }} />
+    <header className="article_header">
+      <Meta date={date} />
+      <h1 className="article_header_title">{title}</h1>
+    </header>
+    <main className="article_content_body" dangerouslySetInnerHTML={{ __html: body }} />
   </div>
 );
 
