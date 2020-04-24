@@ -1,12 +1,15 @@
 .article {
   margin: 5rem 4rem;
-  &_content {
+  &_header {
+    margin: 0 3rem 5rem;
     &_title {
       font-size: var(--font-article-heading);
-      margin: 0 3rem 5rem;
       text-align: center;
       line-height: 1.4;
+      margin: 0;
     }
+  }
+  &_content {
     &_body {
       > ul:first-child {
         > li {

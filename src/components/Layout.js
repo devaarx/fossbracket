@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import { withPrefix } from 'gatsby';
 import { useSiteMetadata } from '../hooks';
 import Navigation from './Navigation';
-
+import Footer from './Footer';
 import '../styles/main.scss';
 
 const Layout = ({ children, title, description, socialImage }) => {
@@ -28,6 +28,9 @@ const Layout = ({ children, title, description, socialImage }) => {
         <Navigation />
       </div>
       <div className="layout_content">{children}</div>
+      <div className="layout_footer">
+        <Footer />
+      </div>
     </div>
   );
 };

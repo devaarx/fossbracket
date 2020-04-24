@@ -7,19 +7,17 @@
     display: flex;
     margin: 0;
     padding: 0;
-    list-style: none;
-    > li {
+    > a {
+      display: inline-block;
       margin: 0 0.6rem 0 0;
-      > a {
-        padding: 0.1rem 0.5rem;
-        font-size: var(--font-label);
-        color: var(--text-secondary);
-        font-weight: 400;
-        transition: 0.2s color ease;
-        &.active,
-        &:hover {
-          color: var(--accent-color) !important;
-        }
+      padding: 0.1rem 0.5rem;
+      font-size: var(--font-label);
+      color: var(--text-secondary);
+      font-weight: 400;
+      transition: 0.2s color ease;
+      &.active,
+      &:hover {
+        color: var(--accent-color) !important;
       }
     }
   }
@@ -28,7 +26,7 @@
 .dark-mode {
   .nav {
     &_link {
-      > li > a {
+      > a {
         color: var(--text-secondary-dark);
       }
     }
