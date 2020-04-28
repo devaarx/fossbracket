@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import useDarkMode from 'use-dark-mode';
 import { useSiteMetadata } from '../../hooks';
+import logoSvg from '../../../static/logo.svg';
 
 const Navigation = () => {
   const { menu, title } = useSiteMetadata();
-  const darkMode = useDarkMode(true);
 
   return (
     <nav className="nav">
       <div className="nav_logo">
         <Link to="/" title={title}>
-          foss<span>bracket</span>
+          <img src={logoSvg} alt="" />
+          fossbracket
         </Link>
       </div>
       <div className="nav_link">
@@ -23,7 +23,6 @@ const Navigation = () => {
           );
         })}
       </div>
-      <div className="nav_toggle" onClick={() => darkMode.toggle()} />
     </nav>
   );
 };

@@ -7,24 +7,20 @@ module.exports = {
   postsPerPage: 6,
   menu: [
     {
-      label: 'All Articles',
-      path: '/',
-    },
-    {
-      label: 'React',
-      path: '/category/react/',
-    },
-    {
-      label: 'JavaScript',
-      path: '/category/java-script/',
-    },
-    {
-      label: 'CSS',
-      path: '/category/css/',
-    },
-    {
       label: 'Linux',
       path: '/category/linux/',
+    },
+    {
+      label: 'Gadgets & Softwares',
+      path: '/category/gadgets-softwares/',
+    },
+    {
+      label: 'Tutorials',
+      path: '/category/tutorials/',
+    },
+    {
+      label: 'All Categories',
+      path: '/categories/',
     },
   ],
   socialLinks: [

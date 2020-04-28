@@ -1,33 +1,21 @@
 .nav {
   display: flex;
   align-items: center;
-  padding-top: 2.5rem;
-  padding-bottom: 4.2rem;
+  justify-content: space-between;
   &_link {
     display: flex;
     margin: 0;
     padding: 0;
     > a {
       display: inline-block;
-      margin: 0 0.6rem 0 0;
+      margin: 0 0 0 1.5rem;
       padding: 0.1rem 0.5rem;
-      font-size: var(--font-label);
-      color: var(--text-secondary);
+      font-size: 1rem;
+      color: var(--main-gray);
       font-weight: 400;
-      transition: 0.2s color ease;
       &.active,
       &:hover {
         color: var(--accent-color) !important;
-      }
-    }
-  }
-}
-
-.dark-mode {
-  .nav {
-    &_link {
-      > a {
-        color: var(--text-secondary-dark);
       }
     }
   }
