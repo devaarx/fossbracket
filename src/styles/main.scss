@@ -1,8 +1,9 @@
 @import './variables';
-@import './app.scss';
+@import './common';
 @import './components/layout.scss';
 @import './components/navigation.scss';
 @import './components/logo.scss';
+@import './components/latest.scss';
 @import './components/feed.scss';
 @import './components/article.scss';
 @import './components/footer.scss';
