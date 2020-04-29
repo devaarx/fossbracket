@@ -3,10 +3,14 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Feed from '../components/Pages/Feed';
 import Pagination from '../components/Pagination';
-import { useSiteMetadata } from '../hooks';
+import { useSiteMetadata, useLatestPosts, useTagsList } from '../hooks';
+import LatestPosts from '../components/LatestPosts';
+import SideTagsList from '../components/SideTagsList/SideTagsList';
 
 const IndexTemplate = ({ data, pageContext }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const latestPosts = useLatestPosts();
+  const tagLists = useTagsList();
 
   const { currentPage, hasNextPage, hasPrevPage, prevPagePath, nextPagePath } = pageContext;
 
@@ -15,7 +19,15 @@ const IndexTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
-      <Feed edges={edges} />
+      <LatestPosts latestPosts={latestPosts} />
+      <div className="layout_flex">
+        <div className="layout_flex_left">
+          <Feed edges={edges} />
+        </div>
+        <div className="layout_flex_right">
+          <SideTagsList tagLists={tagLists} />
+        </div>
+      </div>
       <Pagination
         prevPagePath={prevPagePath}
         nextPagePath={nextPagePath}
@@ -47,6 +59,7 @@ export const query = graphql`
             category
             description
             tags
+            socialImage
           }
         }
       }

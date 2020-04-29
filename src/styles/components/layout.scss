@@ -6,6 +6,16 @@
   &_content {
     flex: 1 0 0;
   }
+  &_flex {
+    display: flex;
+    margin-top: 3.8rem;
+    &_left {
+      flex: 1 0 0;
+    }
+    &_right {
+      flex: 22.5rem 0 0;
+    }
+  }
   &_content,
   .nav,
   &_footer {
