@@ -1,5 +1,5 @@
 ---
-title: Humane Typography in the Digital Age
+title: Ubuntu 20.04 LTS Released. Should you upgrade already?
 date: '2017-08-19T22:40:32.169Z'
 template: 'post'
 slug: 'humane-typography-in-the-digital-age'

@@ -1,5 +1,5 @@
 ---
-title: The Rise Of a Great Sultan Second
+title: Ubuntu 20.04 LTS Released. Should you upgrade already?
 date: '2020-04-03'
 template: 'post'
 slug: 'the-rise-of-a-great-sultan-second'
