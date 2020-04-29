@@ -14,7 +14,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
     prevPagePath,
     nextPagePath,
     hasPrevPage,
-    hasNextPage,
+    hasNextPage
   } = pageContext;
 
   const { edges } = data.allMarkdownRemark;
@@ -55,6 +55,7 @@ export const query = graphql`
             description
             category
             title
+            socialImage
           }
         }
       }

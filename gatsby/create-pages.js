@@ -10,19 +10,19 @@ const createPages = async ({ graphql, actions }) => {
   // 404
   createPage({
     path: '/404',
-    component: path.resolve('./src/templates/not-found-template.js'),
+    component: path.resolve('./src/templates/not-found-template.js')
   });
 
   // Tags list
   createPage({
     path: '/tags',
-    component: path.resolve('./src/templates/tags-list-template.js'),
+    component: path.resolve('./src/templates/tags-list-template.js')
   });
 
   // Categories list
   createPage({
     path: '/categories',
-    component: path.resolve('./src/templates/categories-list-template.js'),
+    component: path.resolve('./src/templates/categories-list-template.js')
   });
 
   // Posts and pages from markdown
@@ -45,11 +45,11 @@ const createPages = async ({ graphql, actions }) => {
 
   const { edges } = result.data.allMarkdownRemark;
 
-  _.each(edges, edge => {
+  _.each(edges, (edge) => {
     createPage({
       path: edge.node.fields.slug,
       component: path.resolve('./src/templates/post-template.js'),
-      context: { slug: edge.node.fields.slug },
+      context: { slug: edge.node.fields.slug }
     });
   });
 
