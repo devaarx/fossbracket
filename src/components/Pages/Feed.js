@@ -7,8 +7,8 @@ function Feed({ edges }) {
     <div className="feed">
       <h3 className="section_heading">All Posts</h3>
       {edges.map((edge) => (
-        <Link to={edge.node.fields.slug} key={edge.node.fields.slug}>
-          <article className="feed_flex">
+        <Link to={edge.node.fields.slug} key={edge.node.fields.slug} className="feed_flex">
+          <article>
             <div className="feed_thumb">
               <img src={edge.node.frontmatter.socialImage} alt="" />
             </div>

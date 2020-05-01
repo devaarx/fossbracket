@@ -11,9 +11,11 @@
     margin-top: 3.8rem;
     &_left {
       flex: 1 0 0;
+      margin-right: 1.2rem;
     }
     &_right {
       flex: 22.5rem 0 0;
+      margin-left: 1.2rem;
     }
   }
   &_content,

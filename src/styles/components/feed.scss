@@ -1,7 +1,15 @@
 .feed {
   // margin: 2rem 0;
   &_flex {
-    display: flex;
+    display: block;
+    margin: 0 0 2rem;
+    > article {
+      display: flex;
+    }
+    &:hover .feed_content_heading {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
   }
   &_thumb {
     min-width: 16.6rem;
@@ -13,6 +21,24 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
+    }
+  }
+  &_content {
+    margin-left: 1.3rem;
+    &_heading {
+      color: var(--main-darker);
+      margin: 0;
+      font-size: 1.3rem;
+    }
+    &_description {
+      color: var(--main-dark);
+      font-size: 1rem;
+      margin: 0.2rem 0;
+    }
+    &_bottom {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--accent-color);
     }
   }
 }
