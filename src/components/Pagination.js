@@ -6,18 +6,14 @@ const Pagination = ({ prevPagePath, nextPagePath, hasNextPage, hasPrevPage }) =>
   return (
     <>
       {hasPrevPage && (
-        <div>
-          <Link rel="prev" to={hasPrevPage ? prevPagePath : '/'}>
-            {PAGINATION.PREV_PAGE}
-          </Link>
-        </div>
+        <Link rel="prev" to={hasPrevPage ? prevPagePath : '/'} className="button">
+          {PAGINATION.PREV_PAGE}
+        </Link>
       )}
       {hasNextPage && (
-        <div>
-          <Link rel="next" to={hasNextPage ? nextPagePath : '/'}>
-            {PAGINATION.NEXT_PAGE}
-          </Link>
-        </div>
+        <Link rel="next" to={hasNextPage ? nextPagePath : '/'} className="button">
+          {PAGINATION.NEXT_PAGE}
+        </Link>
       )}
     </>
   );
