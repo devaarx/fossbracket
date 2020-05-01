@@ -6,6 +6,7 @@ import Pagination from '../components/Pagination';
 import { useSiteMetadata, useLatestPosts, useTagsList } from '../hooks';
 import LatestPosts from '../components/LatestPosts';
 import SideTagsList from '../components/SideTagsList/SideTagsList';
+import { SideAds } from '../components/Advertisement';
 
 const IndexTemplate = ({ data, pageContext }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
@@ -26,6 +27,7 @@ const IndexTemplate = ({ data, pageContext }) => {
         </div>
         <div className="layout_flex_right">
           <SideTagsList tagLists={tagLists} />
+          <SideAds />
         </div>
       </div>
       <Pagination
