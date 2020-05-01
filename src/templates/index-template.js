@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Feed from '../components/Pages/Feed';
+import Feed from '../components/Feed';
 import Pagination from '../components/Pagination';
 import { useSiteMetadata, useLatestPosts, useTagsList } from '../hooks';
 import LatestPosts from '../components/LatestPosts';
