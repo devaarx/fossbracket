@@ -3,10 +3,13 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Feed from '../components/Feed';
 import Pagination from '../components/Pagination';
-import { useSiteMetadata } from '../hooks';
+import { useSiteMetadata, useTagsList } from '../hooks';
+import SideTagsList from '../components/SideTagsList';
+import { SideAds } from '../components/Advertisement';
 
 const CategoryTemplate = ({ data, pageContext }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const tagLists = useTagsList();
 
   const {
     category,
@@ -25,7 +28,15 @@ const CategoryTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
-      <Feed edges={edges} />
+      <div className="layout_flex">
+        <div className="layout_flex_left">
+          <Feed edges={edges} heading={category} />
+        </div>
+        <div className="layout_flex_right">
+          <SideTagsList tagLists={tagLists} />
+          <SideAds />
+        </div>
+      </div>
       <Pagination
         prevPagePath={prevPagePath}
         nextPagePath={nextPagePath}

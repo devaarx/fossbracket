@@ -2,10 +2,10 @@ import React from 'react';
 import moment from 'moment';
 import { Link } from 'gatsby';
 
-function Feed({ edges }) {
+function Feed({ edges, heading }) {
   return (
     <div className="feed">
-      <h3 className="section_heading">All Posts</h3>
+      <h3 className="section_heading">All Posts {heading && `- ${heading}`}</h3>
       {edges.map((edge) => (
         <Link to={edge.node.fields.slug} key={edge.node.fields.slug} className="feed_flex">
           <article>

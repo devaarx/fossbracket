@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Post from '../components/Post';
 import { useSiteMetadata } from '../hooks';
+import { SideAds } from '../components/Advertisement';
 
 const PostTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
@@ -16,7 +17,14 @@ const PostTemplate = ({ data }) => {
       description={metaDescription}
       socialImage={socialImage}
     >
-      <Post post={data.markdownRemark} />
+      <div className="layout_flex">
+        <div className="layout_flex_left">
+          <Post post={data.markdownRemark} />
+        </div>
+        <div className="layout_flex_right">
+          <SideAds />
+        </div>
+      </div>
     </Layout>
   );
 };

@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import Feed from '../components/Feed';
 import Pagination from '../components/Pagination';
 import { useSiteMetadata } from '../hooks';
+import { SideAds } from '../components/Advertisement';
 
 const TagTemplate = ({ data, pageContext }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
@@ -13,12 +14,19 @@ const TagTemplate = ({ data, pageContext }) => {
   const { edges } = data.allMarkdownRemark;
   const pageTitle =
     currentPage > 0
-      ? `All Posts tagged as "${tag}" - Page ${currentPage} - ${siteTitle}`
+      ? `All Posts tagged as "${tag}" - ${siteTitle} - Page ${currentPage}`
       : `All Posts tagged as "${tag}" - ${siteTitle}`;
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
-      <Feed edges={edges} />
+      <div className="layout_flex">
+        <div className="layout_flex_left">
+          <Feed edges={edges} heading={tag} />
+        </div>
+        <div className="layout_flex_right">
+          <SideAds />
+        </div>
+      </div>
       <Pagination
         prevPagePath={prevPagePath}
         nextPagePath={nextPagePath}
