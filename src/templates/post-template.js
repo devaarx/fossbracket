@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Post from '../components/Post';
+import { Header, Content } from '../components/Post';
 import { useSiteMetadata } from '../hooks';
 import { SideAds } from '../components/Advertisement';
 
 const PostTemplate = ({ data }) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
-  const { frontmatter } = data.markdownRemark;
+  const { frontmatter, timeToRead, html } = data.markdownRemark;
   const { title: postTitle, description: postDescription, socialImage } = frontmatter;
   const metaDescription = postDescription !== null ? postDescription : siteSubtitle;
 
@@ -17,9 +17,10 @@ const PostTemplate = ({ data }) => {
       description={metaDescription}
       socialImage={socialImage}
     >
+      <Header frontmatter={frontmatter} timeToRead={timeToRead} />
       <div className="layout_flex">
         <div className="layout_flex_left">
-          <Post post={data.markdownRemark} />
+          <Content body={html} />
         </div>
         <div className="layout_flex_right">
           <SideAds />
@@ -44,7 +45,9 @@ export const query = graphql`
         tags
         title
         socialImage
+        category
       }
+      timeToRead
     }
   }
 `;

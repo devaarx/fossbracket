@@ -15,8 +15,8 @@ module.exports = {
       path: '/category/gadgets-softwares/'
     },
     {
-      label: 'Tutorials',
-      path: '/category/tutorials/'
+      label: 'Guides',
+      path: '/category/guides/'
     },
     {
       label: 'All Categories',
