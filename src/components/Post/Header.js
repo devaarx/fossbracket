@@ -6,7 +6,9 @@ function Header({ timeToRead, frontmatter }) {
   return (
     <div className="latest article_header">
       <header className=" article_header_content">
-        <span>{category}</span>
+        {category.map((item, index) => {
+          return <span key={index}>{item}</span>;
+        })}
         <h1>{title}</h1>
         <div className="article_header_meta">
           <span>

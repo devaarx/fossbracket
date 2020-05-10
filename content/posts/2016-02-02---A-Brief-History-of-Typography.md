@@ -1,12 +1,12 @@
 ---
 title: 'A Brief History of Typography'
-date: '2016-02-02T22:40:32.169Z'
+date: '2016-02-02'
 template: 'post'
 slug: 'a-brief-history-of-typography'
-category: 'CSS'
+category:
+  - 'Gadgets & Softwares'
 tags:
-  - 'Web Development'
-  - 'React'
+  - 'Smartphones'
 description: 'Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.'
 socialImage: '/media/image-0.jpg'
 ---
@@ -23,15 +23,6 @@ Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aen
 - Aliquam tincidunt mauris eu risus.
 
 Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat.
-
-<figure>
-	<blockquote>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
-		<footer>
-			<cite>— Aliquam tincidunt mauris eu risus.</cite>
-		</footer>
-	</blockquote>
-</figure>
 
 ### Header Level 3
 

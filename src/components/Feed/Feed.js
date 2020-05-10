@@ -17,7 +17,7 @@ function Feed({ edges, heading }) {
               <p className="feed_content_description">{edge.node.frontmatter.description}</p>
               <div className="feed_content_bottom">
                 <time dateTime={moment(edge.node.frontmatter.date).format('MMMM D, YYYY')}>
-                  {moment(edge.node.frontmatter.date).format('MMMM YYYY')}
+                  {moment(edge.node.frontmatter.date).format('D MMMM YYYY')}
                 </time>
                 {/* <span>
                 <Link to={edge.node.fields.categorySlug}>{edge.node.frontmatter.category}</Link>
