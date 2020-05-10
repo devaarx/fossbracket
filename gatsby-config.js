@@ -62,8 +62,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `FOSSBRACKET`,
-        short_name: `FOSSBRACKET`,
+        name: siteConfig.title,
+        short_name: siteConfig.title,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#25A186`,
