@@ -72,6 +72,12 @@
         transform: translateY(-50%);
       }
     }
+    h2 {
+      font-size: 1.4rem;
+    }
+    h3 {
+      font-size: 1.15rem;
+    }
     a {
       color: var(--accent-color);
       font-weight: inherit;
@@ -106,7 +112,7 @@
         font-size: 1.36rem;
         font-style: italic;
         margin: 0;
-        &:last-child {
+        &:nth-child(2) {
           font-size: 1rem;
           opacity: 0.6;
           margin: 1rem 0 0;
