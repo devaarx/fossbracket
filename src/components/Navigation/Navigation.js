@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { useSiteMetadata } from '../../hooks';
-import logoSvg from '../../assets/logo.svg';
+import logoSvg from '../../../static/media/logo.svg';
 
 const Navigation = () => {
   const { menu, title } = useSiteMetadata();
