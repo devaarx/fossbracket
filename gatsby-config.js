@@ -58,6 +58,18 @@ module.exports = {
       options: {
         implementation: require('sass')
       }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `FOSSBRACKET`,
+        short_name: `FOSSBRACKET`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#25A186`,
+        display: `standalone`,
+        icon: `static/media/favicon.png`
+      }
     }
   ]
 };
