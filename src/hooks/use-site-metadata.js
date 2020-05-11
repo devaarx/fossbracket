@@ -6,19 +6,6 @@ const useSiteMetadata = () => {
       query SiteMetaData {
         site {
           siteMetadata {
-            author {
-              name
-              bio
-              photo
-              contacts {
-                telegram
-                twitter
-                github
-                linkedin
-                codepen
-                youtube
-              }
-            }
             menu {
               label
               path
@@ -26,6 +13,7 @@ const useSiteMetadata = () => {
             socialLinks {
               label
               link
+              icon
             }
             url
             title

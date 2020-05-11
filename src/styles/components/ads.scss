@@ -1,0 +1,10 @@
+.ads {
+  &_aside {
+    margin-bottom: 3.8rem;
+    &_sqare {
+      width: 340px;
+      height: 340px;
+      background-color: var(--main-whitish);
+    }
+  }
+}

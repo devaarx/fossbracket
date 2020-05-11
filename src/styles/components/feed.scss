@@ -1,61 +1,45 @@
 .feed {
-  // margin: 2rem 0;
-  max-width: 660px;
-  &_article {
-    padding: 2rem 0;
+  margin: 0 0 4rem;
+  &_flex {
+    display: block;
+    margin: 0 0 2rem;
+    > article {
+      display: flex;
+    }
+    &:hover .feed_content_heading {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+  }
+  &_thumb {
+    min-width: 16.6rem;
+    max-width: 16.6rem;
+    height: 10.5rem;
+    border: 1px solid var(--main-whitish);
+    box-sizing: border-box;
+    overflow: hidden;
+    > img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &_content {
+    margin-left: 1.3rem;
     &_heading {
+      color: var(--main-darker);
       margin: 0;
-      font-size: var(--font-heading);
-      line-height: 1.4;
-      a {
-        display: block;
-        color: inherit;
-        transition: 0.2s ease;
-        will-change: opacity;
-        &:hover {
-          opacity: 0.7;
-        }
-      }
+      font-size: 1.3rem;
     }
     &_description {
-      margin: 0.8rem 0;
-      font-size: var(--font-normal);
-    }
-    &_detail {
-      margin: 0 0 0.6rem;
-      display: flex;
-      align-items: center;
-      > b {
-        margin: 0 0.6rem;
-        color: var(--text-secondary);
-        opacity: 0.5;
-        font-size: var(--font-label-small);
-      }
-      > time {
-        font-size: var(--font-normal);
-      }
-      > span > a {
-        font-weight: 400;
-        color: var(--accent-color);
-        transition: 0.2s ease;
-        will-change: opacity;
-        &:hover {
-          opacity: 0.7;
-        }
-      }
+      color: var(--main-dark);
+      font-size: 1rem;
+      margin: 0.2rem 0;
     }
     &_bottom {
-      a {
-        font-size: var(--font-label);
-        font-weight: 400;
-        color: inherit;
-        opacity: 0.6;
-        transition: 0.2s ease;
-        will-change: opacity;
-        &:hover {
-          opacity: 1;
-        }
-      }
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--accent-color);
     }
   }
 }

@@ -1,51 +1,17 @@
 .nav {
   &_logo {
-    display: flex;
-    align-items: center;
     > a {
-      margin-right: 2.6rem;
-      font-weight: normal;
-      line-height: 1;
       display: inline-flex;
       align-items: center;
       text-transform: uppercase;
-      font-weight: 800;
-      font-size: var(--font-block);
-      color: var(--text-dark);
-      > span {
-        padding: 0 0.77rem;
-        margin-left: 0.4rem;
-        position: relative;
-        font-size: var(--font-label);
-        text-transform: lowercase;
-        font-weight: 300;
-        &::after,
-        &::before {
-          font-weight: 500;
-          font-size: var(--font-block);
-          position: absolute;
-          color: var(--accent-color);
-          top: 50%;
-          transform: translateY(-58%);
-          line-height: 1;
-        }
-        &::after {
-          content: '}';
-          right: 0;
-        }
-        &::before {
-          content: '{';
-          left: 0;
-        }
+      font-family: 'Saira Condensed', sans-serif;
+      font-size: 1.4rem;
+      color: var(--main-darker);
+      img {
+        width: 1.5rem;
+        margin-right: 0.66rem;
+        margin-bottom: 0.2rem;
       }
-    }
-  }
-}
-
-.dark-mode {
-  .nav_logo {
-    > a {
-      color: var(--text-light);
     }
   }
 }

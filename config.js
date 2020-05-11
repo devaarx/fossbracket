@@ -1,53 +1,51 @@
 module.exports = {
-  url: 'https://fossbracket.com',
+  url: 'https://www.fossbracket.com/',
   pathPrefix: '/',
-  title: 'Fossbracket',
+  title: 'FOSSBRACKET',
   subtitle: '',
-  copyright: '© 2020 All rights reserved.',
+  copyright: 'Fossbracket © 2020 All rights reserved',
   postsPerPage: 6,
   menu: [
     {
-      label: 'All Articles',
-      path: '/',
-    },
-    {
-      label: 'React',
-      path: '/category/react/',
-    },
-    {
-      label: 'JavaScript',
-      path: '/category/java-script/',
-    },
-    {
-      label: 'CSS',
-      path: '/category/css/',
-    },
-    {
       label: 'Linux',
-      path: '/category/linux/',
+      path: '/category/linux/'
     },
+    {
+      label: 'Gadgets & Softwares',
+      path: '/category/gadgets-softwares/'
+    },
+    {
+      label: 'Guides',
+      path: '/category/guides/'
+    },
+    {
+      label: 'All Categories',
+      path: '/categories/'
+    }
   ],
   socialLinks: [
     {
       label: 'Twitter',
       link: '#',
+      icon: 'twitter'
     },
     {
       label: 'Facebook',
       link: '#',
-    },
-  ],
-  author: {
-    name: 'iamdebadipti',
-    photo: '/photo.jpg',
-    bio: 'A JavaScript Developer',
-    contacts: {
-      telegram: '#',
-      twitter: '#',
-      github: '#',
-      linkedin: '#',
-      codepen: '',
-      youtube: '',
-    },
-  },
+      icon: 'facebook'
+    }
+  ]
+  // author: {
+  //   name: 'iamdebadipti',
+  //   photo: '/photo.jpg',
+  //   bio: 'A JavaScript Developer',
+  //   contacts: {
+  //     telegram: '#',
+  //     twitter: '#',
+  //     github: '#',
+  //     linkedin: '#',
+  //     codepen: '',
+  //     youtube: '',
+  //   },
+  // },
 };

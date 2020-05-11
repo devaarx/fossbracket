@@ -8,37 +8,37 @@ module.exports = {
     subtitle: siteConfig.subtitle,
     copyright: siteConfig.copyright,
     menu: siteConfig.menu,
-    author: siteConfig.author,
-    socialLinks: siteConfig.socialLinks,
+    // author: siteConfig.author,
+    socialLinks: siteConfig.socialLinks
   },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content`,
-        name: 'pages',
-      },
+        name: 'pages'
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/media`,
-        name: 'media',
-      },
+        name: 'media'
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'css',
-        path: `${__dirname}/static/css`,
-      },
+        path: `${__dirname}/static/css`
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'assets',
-        path: `${__dirname}/static`,
-      },
+        path: `${__dirname}/static`
+      }
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -46,9 +46,9 @@ module.exports = {
         plugins: [
           'gatsby-remark-autolink-headers',
           'gatsby-remark-prismjs',
-          'gatsby-remark-external-links',
-        ],
-      },
+          'gatsby-remark-external-links'
+        ]
+      }
     },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
@@ -56,23 +56,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        implementation: require('sass'),
-      },
+        implementation: require('sass')
+      }
     },
     {
-      resolve: 'gatsby-plugin-use-dark-mode',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        classNameDark: 'dark-mode',
-        classNameLight: 'light-mode',
-        storageKey: 'darkMode',
-        minify: true,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-  ],
+        name: siteConfig.title,
+        short_name: siteConfig.title,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#25A186`,
+        display: `standalone`,
+        icon: `static/media/favicon.png`
+      }
+    }
+  ]
 };

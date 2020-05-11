@@ -1,22 +1,13 @@
 import React from 'react';
 import { useSiteMetadata } from '../../hooks';
+import FollowLinks from './FollowLinks';
 
 function Footer() {
   const { copyright, socialLinks } = useSiteMetadata();
   return (
     <footer className="footer">
-      <span className="footer_copy">{copyright}</span>
-      <ul className="footer_nav">
-        {socialLinks.map((item, index) => {
-          return (
-            <li key={index}>
-              <a href={item.link} target="_blank">
-                {item.label}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+      <FollowLinks socialLinks={socialLinks} />
+      <div className="footer_copy">{copyright}</div>
     </footer>
   );
 }
