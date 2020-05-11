@@ -118,3 +118,5 @@ console.log(myOrderedArray);
 And, here we are passing and empty _Array []_ as our “initial value”, because we want the end return value to be an Array.
 
 So, that is it. You can see how `reduce()` can really help achieving more with less code. I would strongly suggest going through [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) for more examples and detailed explanation of `reduce()`.
+
+Thank you so much for reading!
