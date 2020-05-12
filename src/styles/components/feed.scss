@@ -3,8 +3,11 @@
   &_flex {
     display: block;
     margin: 0 0 2rem;
-    > article {
-      display: flex;
+    @include md {
+      margin: 0 0 2rem;
+      > article {
+        display: flex;
+      }
     }
     &:hover .feed_content_heading {
       color: var(--accent-color);
@@ -12,12 +15,16 @@
     }
   }
   &_thumb {
-    min-width: 16.6rem;
-    max-width: 16.6rem;
-    height: 10.5rem;
-    border: 1px solid var(--main-whitish);
-    box-sizing: border-box;
-    overflow: hidden;
+    display: none;
+    @include md {
+      display: block;
+      min-width: 16.6rem;
+      max-width: 16.6rem;
+      height: 10.5rem;
+      border: 1px solid var(--main-whitish);
+      box-sizing: border-box;
+      overflow: hidden;
+    }
     > img {
       height: 100%;
       width: 100%;
@@ -25,7 +32,10 @@
     }
   }
   &_content {
-    margin-left: 1.3rem;
+    margin: 0;
+    @include md {
+      margin: 0 0 0 1.3rem;
+    }
     &_heading {
       color: var(--main-darker);
       margin: 0;
