@@ -24,8 +24,10 @@
     @extend .layout_width;
   }
   &_nav {
-    padding: 1.2rem 0;
     border-bottom: 1px solid var(--main-whitish);
+    position: relative;
+    z-index: 4;
+    background-color: white;
   }
 }
 
