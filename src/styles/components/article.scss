@@ -1,7 +1,10 @@
 .article {
   &_header {
     &_content {
-      max-width: calc(100% - 23.6rem);
+      max-width: 100%;
+      @include md {
+        max-width: calc(100% - 23.6rem);
+      }
       > span {
         padding: 0.5rem 1.3rem;
         background-color: var(--accent-color);
@@ -12,10 +15,13 @@
         margin-right: 1rem;
       }
       > h1 {
-        font-size: 2.25rem;
+        font-size: 1.8rem;
         font-weight: 600;
         line-height: 1.3;
         margin: 1.2rem 0 1.5rem;
+        @include md {
+          font-size: 2.25rem;
+        }
       }
     }
     &_meta {
@@ -33,6 +39,7 @@
     width: 100%;
     font-size: 1.14rem;
     color: var(--main-dark);
+    margin: 0 0 4rem;
     > p {
       margin: 0 0 1.5rem;
       font-size: inherit;
@@ -67,7 +74,10 @@
       padding: 0.4rem 0;
       line-height: 1.4;
       color: var(--main-darker);
-      margin: 2rem 0 0.6rem;
+      margin: 1.8rem 0 0.4rem;
+      @include md {
+        margin: 2rem 0 0.6rem;
+      }
       .anchor.before {
         top: 50%;
         left: -1.5rem;
@@ -75,10 +85,16 @@
       }
     }
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.26rem;
+      @include md {
+        font-size: 1.4rem;
+      }
     }
     h3 {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
+      @include md {
+        font-size: 1.15rem;
+      }
     }
     a {
       color: var(--accent-color);
@@ -99,6 +115,7 @@
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+      max-width: 100% !important;
       img {
         max-width: 100%;
       }
@@ -109,23 +126,36 @@
       }
     }
     blockquote {
-      margin: 2.5rem 1.6rem;
+      margin: 2rem 0.4rem;
+      @include md {
+        margin: 2.5rem 1.6rem;
+      }
       p {
-        font-size: 1.36rem;
+        font-size: 1.2rem;
         font-style: italic;
         margin: 0;
         &:nth-child(2) {
-          font-size: 1rem;
+          font-size: 0.88rem;
           opacity: 0.6;
           margin: 1rem 0 0;
+        }
+        @include md {
+          font-size: 1.36rem;
+          &:nth-child(2) {
+            font-size: 1rem;
+          }
         }
       }
     }
     hr {
-      width: 60%;
-      margin: 4rem auto;
+      width: 80%;
+      margin: 2rem auto;
       border: 0.05rem solid;
       opacity: 0.5;
+      @include md {
+        width: 60%;
+        margin: 4rem auto;
+      }
     }
   }
 }
