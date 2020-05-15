@@ -1,6 +1,6 @@
 ---
 title: What is reduce() in JavaScript? And, how it can be useful?
-date: '2020-5-11'
+date: '2020-05-11T21:46:37.121Z'
 template: 'post'
 slug: 'what-is-reduce-in-javascript'
 category:
