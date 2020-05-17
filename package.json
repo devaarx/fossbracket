@@ -6,8 +6,8 @@
   "author": "iamdebadipti <iamdebadipti@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "develop": "yarn run clean && gatsby develop",
-    "build": "yarn run clean && gatsby build"
+    "develop": "yarn cache clean && gatsby develop",
+    "build": "yarn cache clean && gatbsy clean && gatsby build"
   },
   "keywords": [],
   "dependencies": {
