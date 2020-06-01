@@ -5,7 +5,7 @@ template: 'post'
 slug: 'hello-world'
 category:
   - 'Hello World'
-tags:
+tags: ['hello']
 description: 'hello world'
 socialImage: '/media/reduce-javascript.jpg'
 ---
