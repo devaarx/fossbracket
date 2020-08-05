@@ -93,6 +93,12 @@ module.exports = {
       options: {
         trackingId: 'UA-168736545-1'
       }
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `fossbracket`
+      }
     }
   ]
 };
