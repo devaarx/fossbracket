@@ -20,12 +20,12 @@ const BlogPostTemplate = ({
 
   // disqus
   let disqusConfig = {
-    url: `${data.site.siteMetadata.siteUrl + window.location.pathname}`,
+    url: `${data.site.siteMetadata.siteUrl + data.markdownRemark.fields.slug}`,
     identifier: data.markdownRemark.id,
     title: post.frontmatter.title
   };
 
-  // console.log('disqusConfig', disqusConfig);
+  console.log('disqusConfig', disqusConfig);
 
   return (
     <Layout>
