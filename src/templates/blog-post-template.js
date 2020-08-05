@@ -6,6 +6,7 @@ import styles from '../styles/layout.module.scss';
 import articleStyle from '../styles/article.module.scss';
 import kebabCase from 'lodash/kebabCase';
 import Sharer from '../components/sharer';
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 
 const BlogPostTemplate = ({
   data
@@ -16,6 +17,15 @@ const BlogPostTemplate = ({
   const siteLink = data.site.siteMetadata.siteUrl;
 
   const shareLink = `${siteLink}${post.fields.slug}`;
+
+  // disqus
+  let disqusConfig = {
+    url: `${data.site.siteMetadata.siteUrl + data.markdownRemark.fields.slug}`,
+    identifier: data.markdownRemark.id,
+    title: post.frontmatter.title
+  };
+
+  // console.log('disqusConfig', disqusConfig);
 
   return (
     <Layout>
@@ -51,6 +61,12 @@ const BlogPostTemplate = ({
             />
           </article>
           <Sharer heading="Share this post:" url={shareLink} title={post.frontmatter.title} />
+
+          {/* discuss comment section */}
+          <section style={{ margin: '4rem 0 0' }}>
+            <CommentCount config={disqusConfig} placeholder="" />
+            <Disqus config={disqusConfig} />
+          </section>
         </main>
         <aside className={styles.layout_flex_right}></aside>
       </div>
