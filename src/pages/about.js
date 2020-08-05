@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import { useStaticQuery, graphql } from 'gatsby';
 import styles from '../styles/layout.module.scss';
