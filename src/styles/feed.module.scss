@@ -1,0 +1,39 @@
+.feed {
+  // margin: 0 0 4rem;
+  &_flex {
+    display: block;
+    margin: 0 0 2rem;
+    color: black;
+    > article {
+      display: flex;
+      > div:first-child {
+        display: none;
+        @media (min-width: 900px) {
+          display: block;
+        }
+      }
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &_content {
+    margin: 0;
+    @media (min-width: 900px) {
+      margin: 0 0 0 1.2rem;
+    }
+    &_heading {
+      margin: 0 0 0.6rem;
+      font-size: 1.46rem;
+    }
+    &_date {
+      margin: 0 0 0.4rem;
+      font-size: 0.88rem;
+      opacity: 0.6;
+    }
+    &_description {
+      font-size: 1rem;
+      margin: 0.6rem 0 0;
+    }
+  }
+}

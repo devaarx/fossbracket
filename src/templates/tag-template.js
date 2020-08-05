@@ -1,73 +1,64 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import Feed from '../components/Feed';
-import Pagination from '../components/Pagination';
-import { useSiteMetadata } from '../hooks';
-import { SideAds } from '../components/Advertisement';
+import { Link, graphql } from 'gatsby';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import styles from '../styles/layout.module.scss';
+import Feed from '../components/feed';
+import buttonStyle from '../styles/button.module.scss';
 
-const TagTemplate = ({ data, pageContext }) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
-
-  const { tag, currentPage, prevPagePath, nextPagePath, hasPrevPage, hasNextPage } = pageContext;
-
-  const { edges } = data.allMarkdownRemark;
-  const pageTitle =
-    currentPage > 0
-      ? `All Posts tagged as "${tag}" - ${siteTitle} - Page ${currentPage}`
-      : `All Posts tagged as "${tag}" - ${siteTitle}`;
+const Tags = ({ pageContext, data }) => {
+  const { tag } = pageContext;
+  const { edges, totalCount } = data.allMarkdownRemark;
+  const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tag}"`;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle}>
-      <div className="layout_flex">
-        <div className="layout_flex_left">
-          <Feed edges={edges} heading={tag} />
-        </div>
-        <div className="layout_flex_right">
-          <SideAds />
+    <Layout>
+      <SEO title={tagHeader} />
+      <div>
+        <h1 style={{ margin: '3rem 0 2rem' }}>{tagHeader}</h1>
+        <div className={styles.layout_flex}>
+          <div className={styles.layout_flex_left}>
+            <Feed posts={edges} />
+            <Link to="/tags" className={buttonStyle.button}>
+              All Tags &#8594;
+            </Link>
+          </div>
+          <div className={styles.layout_flex_right} />
         </div>
       </div>
-      <Pagination
-        prevPagePath={prevPagePath}
-        nextPagePath={nextPagePath}
-        hasPrevPage={hasPrevPage}
-        hasNextPage={hasNextPage}
-      />
     </Layout>
   );
 };
 
-export const query = graphql`
-  query TagPage($tag: String, $postsLimit: Int!, $postsOffset: Int!) {
-    site {
-      siteMetadata {
-        title
-        subtitle
-      }
-    }
+export default Tags;
+
+export const pageQuery = graphql`
+  query($tag: String) {
     allMarkdownRemark(
-      limit: $postsLimit
-      skip: $postsOffset
-      filter: { frontmatter: { tags: { in: [$tag] }, template: { eq: "post" } } }
-      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 2000
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
+      totalCount
       edges {
         node {
+          excerpt
           fields {
             slug
-            categorySlug
           }
           frontmatter {
+            date(formatString: "MMMM DD, YYYY")
             title
-            date
-            category
-            description
-            socialImage
+            featuredImage {
+              childImageSharp {
+                sizes(maxWidth: 260) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }
     }
   }
 `;
-
-export default TagTemplate;

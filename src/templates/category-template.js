@@ -1,77 +1,66 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import Feed from '../components/Feed';
-import Pagination from '../components/Pagination';
-import { useSiteMetadata, useTagsList } from '../hooks';
-import SideTagsList from '../components/SideTagsList';
-import { SideAds } from '../components/Advertisement';
+import { Link, graphql } from 'gatsby';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Feed from '../components/feed';
+import styles from '../styles/layout.module.scss';
+import buttonStyle from '../styles/button.module.scss';
 
-const CategoryTemplate = ({ data, pageContext }) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
-  const tagLists = useTagsList();
-
-  const {
-    category,
-    currentPage,
-    prevPagePath,
-    nextPagePath,
-    hasPrevPage,
-    hasNextPage
-  } = pageContext;
-
-  const { edges } = data.allMarkdownRemark;
-  const pageTitle =
-    currentPage > 0
-      ? `${category} - Page ${currentPage} - ${siteTitle}`
-      : `${category} - ${siteTitle}`;
+const Category = ({ pageContext, data }) => {
+  const { category } = pageContext;
+  const { edges, totalCount } = data.allMarkdownRemark;
+  const categoryHeader = `${totalCount} post${
+    totalCount === 1 ? '' : 's'
+  } in "${category}" category`;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle}>
-      <div className="layout_flex">
-        <div className="layout_flex_left">
-          <Feed edges={edges} heading={category} />
-        </div>
-        <div className="layout_flex_right">
-          <SideTagsList tagLists={tagLists} />
-          <SideAds />
+    <Layout>
+      <SEO title={categoryHeader} />
+      <div>
+        <h1 style={{ margin: '3rem 0 2rem' }}>{categoryHeader}</h1>
+        <div className={styles.layout_flex}>
+          <div className={styles.layout_flex_left}>
+            <Feed posts={edges} />
+            <Link to="/categories" className={buttonStyle.button}>
+              All Categories &#8594;
+            </Link>
+          </div>
+          <div className={styles.layout_flex_right} />
         </div>
       </div>
-      <Pagination
-        prevPagePath={prevPagePath}
-        nextPagePath={nextPagePath}
-        hasPrevPage={hasPrevPage}
-        hasNextPage={hasNextPage}
-      />
     </Layout>
   );
 };
 
-export const query = graphql`
-  query CategoryPage($category: String, $postsLimit: Int!, $postsOffset: Int!) {
+export default Category;
+
+export const pageQuery = graphql`
+  query($category: String) {
     allMarkdownRemark(
-      limit: $postsLimit
-      skip: $postsOffset
-      filter: { frontmatter: { category: { eq: $category }, template: { eq: "post" } } }
-      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 2000
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { category: { in: [$category] } } }
     ) {
+      totalCount
       edges {
         node {
+          excerpt
           fields {
-            categorySlug
             slug
           }
           frontmatter {
-            date
-            description
-            category
+            date(formatString: "MMMM DD, YYYY")
             title
-            socialImage
+            featuredImage {
+              childImageSharp {
+                sizes(maxWidth: 260) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }
     }
   }
 `;
-
-export default CategoryTemplate;

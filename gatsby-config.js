@@ -1,22 +1,44 @@
-const siteConfig = require('./config.js');
-
 module.exports = {
-  pathPrefix: siteConfig.pathPrefix,
   siteMetadata: {
-    url: siteConfig.url,
-    title: siteConfig.title,
-    subtitle: siteConfig.subtitle,
-    copyright: siteConfig.copyright,
-    menu: siteConfig.menu,
-    // author: siteConfig.author,
-    socialLinks: siteConfig.socialLinks
+    title: `Fossbracket`,
+    description: `A blog website all about OSS - Linux, Gadgets & Softwares and Web Technologies - JavaScript, React, CSS, Node, GraphQL and so much more.`,
+    about: `A blog website all about OSS - Linux, Gadgets & Softwares and Web Technologies - JavaScript, React, CSS, Node, GraphQL and so much more.`,
+    siteUrl: `https://fossbracket.com/`,
+    navLinks: [
+      {
+        name: `Linux`,
+        path: `/categories/linux/`
+      },
+      {
+        name: `Guides`,
+        path: `/categories/guides/`
+      },
+      {
+        name: `Gadgets & Softwares`,
+        path: `/categories/gadgets-softwares/`
+      },
+      {
+        name: `About`,
+        path: `/about/`
+      }
+    ],
+    social: {
+      facebook: `https://www.facebook.com/fossbracket/`
+    }
   },
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content`,
-        name: 'pages'
+        path: `${__dirname}/static`,
+        name: 'assets'
       }
     },
     {
@@ -29,46 +51,47 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'css',
-        path: `${__dirname}/static/css`
+        path: `${__dirname}/static/css`,
+        name: 'css'
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'assets',
-        path: `${__dirname}/static`
-      }
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          'gatsby-remark-autolink-headers',
-          'gatsby-remark-prismjs',
-          'gatsby-remark-external-links'
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590
+            }
+          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-autolink-headers`
         ]
       }
     },
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-optimize-svgs',
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        implementation: require('sass')
-      }
-    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: siteConfig.title,
-        short_name: siteConfig.title,
+        name: `Fossbracket`,
+        short_name: `Fossbracket`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#25A186`,
-        display: `standalone`,
+        theme_color: `#000000`,
+        display: `minimal-ui`,
         icon: `static/media/favicon.png`
+      }
+    },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-168736545-1'
       }
     }
   ]

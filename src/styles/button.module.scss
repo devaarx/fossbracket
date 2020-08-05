@@ -1,0 +1,20 @@
+.button {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #424242;
+  padding: 0.44rem 1.26rem;
+  font-size: 1rem;
+  margin: 0 0.88rem 0.88rem 0;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: black;
+    border-color: black;
+    color: white;
+  }
+}

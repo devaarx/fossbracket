@@ -1,0 +1,26 @@
+.share {
+  margin: 1.4rem 0;
+  &_heading {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 0 1rem;
+  }
+  &_links {
+    display: flex;
+    align-items: center;
+    &_item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-right: 0.46rem;
+      box-sizing: border-box;
+      background-color: black;
+      > svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+  }
+}
