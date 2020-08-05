@@ -25,7 +25,7 @@ const BlogPostTemplate = ({
     title: post.frontmatter.title
   };
 
-  console.log('disqusConfig', disqusConfig);
+  // console.log('disqusConfig', disqusConfig);
 
   return (
     <Layout>
