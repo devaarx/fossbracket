@@ -3,7 +3,7 @@ module.exports = {
     title: `Fossbracket`,
     description: `A blog website all about OSS - Linux, Gadgets & Softwares and Web Technologies - JavaScript, React, CSS, Node, GraphQL and so much more.`,
     about: `A blog website all about OSS - Linux, Gadgets & Softwares and Web Technologies - JavaScript, React, CSS, Node, GraphQL and so much more.`,
-    siteUrl: `https://fossbracket.com/`,
+    siteUrl: `https://www.fossbracket.com/`,
     navLinks: [
       {
         name: `Linux`,
