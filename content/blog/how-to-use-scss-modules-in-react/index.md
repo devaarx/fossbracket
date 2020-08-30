@@ -2,7 +2,7 @@
 title: How to use SCSS modules in React?
 date: '2020-08-21T10:50:11.121Z'
 category: 'Guides'
-tags: ['React', 'SCSS']
+tags: ['React', 'SCSS', 'Web Development']
 featuredImage: './featuredImage.jpeg'
 ---
 
