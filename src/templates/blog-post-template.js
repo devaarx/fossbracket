@@ -6,7 +6,7 @@ import styles from '../styles/layout.module.scss';
 import articleStyle from '../styles/article.module.scss';
 import kebabCase from 'lodash/kebabCase';
 import Sharer from '../components/sharer';
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
+import { Disqus } from 'gatsby-plugin-disqus';
 
 const BlogPostTemplate = ({
   data
@@ -33,6 +33,7 @@ const BlogPostTemplate = ({
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         image={post.frontmatter.featuredImage.childImageSharp.sizes.src}
+        url={shareLink}
       />
       <div className={styles.layout_flex}>
         <main className={styles.layout_flex_left}>
@@ -64,7 +65,7 @@ const BlogPostTemplate = ({
 
           {/* discuss comment section */}
           <section style={{ margin: '4rem 0 0' }}>
-            <CommentCount config={disqusConfig} placeholder="" />
+            {/* <CommentCount config={disqusConfig} placeholder="" /> */}
             <Disqus config={disqusConfig} />
           </section>
         </main>
